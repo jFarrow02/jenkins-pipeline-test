@@ -23,6 +23,6 @@
     - `su jenkins`
     - `docker run -p 8080:8080 -p 50000:50000 -d -v jenkins_home:/var/jenkins_home jenkins/jenkins`
 
-5. Visit Jenkins server IP on port 8080 in browser. Enter admin password from location indicated or `docker exec {container_name} /bin/bash`
+5. Visit Jenkins server IP on port 8080 in browser. Enter admin password from location indicated or `docker logs {container_name}`
 
 6. Install suggested plugins.
