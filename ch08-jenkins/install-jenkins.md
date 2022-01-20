@@ -13,7 +13,6 @@
 
 3. Install Docker
     - `sudo apt install docker.io`
-    - `docker pull jenkins/jenkins`
 
 4. Create new Jenkins user and add to docker group:
     - `sudo adduser jenkins`

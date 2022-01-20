@@ -26,7 +26,7 @@ Must install and configure your build tools on Jenkins in order to have those co
 1. Manage Jenkins > Global Tools Configuration > Maven
     - Select configuration name > Select Maven version > Install from Apache
 
-### Install NPM on the Server
+### Install NPM on the Jenkins Container
 
 1. Enter Jenkins container as **root user** in order to get install privileges:
 `docker exec -it -u 0 {container-name} /bin/bash`
