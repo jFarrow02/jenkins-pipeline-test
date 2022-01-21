@@ -1,6 +1,5 @@
 # Jenkinsfile Syntax
 
-
 `Jenkinsfile`:
 
 ```
@@ -104,7 +103,7 @@ pipeline {
 2. **Conditionals** for each stage: execute logic when a certain condition is true
 
 3. **Environmental variables**
-    - location for available env vars provided by Jenkins: /env=vars.html
+    - location for available env vars provided by Jenkins: /env-vars.html
     - Define your own in `environment`
 
 4. **Using Credentials in Jenkinsfile**:

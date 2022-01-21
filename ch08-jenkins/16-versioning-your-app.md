@@ -60,6 +60,7 @@ This command increments to the next patch version of the package:
                     }
                 }
             }
+
             stage("build app") {
                 steps {
                     script {
@@ -73,8 +74,8 @@ This command increments to the next patch version of the package:
                 steps {
                     script {
                         echo "Building the Docker image..."
-                        withCredentials([ credentialsId: '{credential-id-name}', passwordVariable: 'PWD', usernameVariable: '']) {
-                            sh 'docker build -t {artifact-repoaddr}:{artifact-repoport}/{image-name}:${IMAGE_VERSION}{dockerfile-location}'
+                        withCredentials([ credentialsId: '{credential-id-name}', passwordVariable: 'PWD', usernameVariable: 'USER']) {
+                            sh 'docker build -t {artifact-repoaddr}:{artifact-repoport}/{image-name}:${IMAGE_VERSION} {dockerfile-location}'
                             sh "echo $PWD | docker login -u $USER --password-stdin {artifact-repoaddr}:{artifact-port}"
                             sh 'docker push {artifact-repoaddr}:{artifact-repoport}/{imagename}:${IMAGE_VERSION}
                         }
@@ -148,15 +149,16 @@ Must commit the updated (pom.xml, etc.) from Jenkinsfile:
                             sh 'git config --global user.email "jenkins@example.com"'
                             sh 'git config --global user.name "jenkins"'
 
-                            sh 'git status'
-                            sh 'git branch'
-                            sh 'git config --list'
+                            // sh 'git status'
+                            // sh 'git branch'
+                            // sh 'git config --list'
 
                             // commit changes from Jenkinsfile
                             sh "git remote set-url origin https://${USER}:${PWD}@{git-repo-url}" // set repo url for current context and pass credentials for auth
                             sh 'git add .'
                             sh "git commit -m"ci: version bump"
-                            sh "git push origin HEAD:jenkins-jobs"
+                            // sh "git push origin HEAD:jenkins-jobs"
+                            sh "git push origin HEAD:${BRANCH_NAME}" // Use "BRANCH_NAME" Jenkins env var
                         }
                     }
                 }

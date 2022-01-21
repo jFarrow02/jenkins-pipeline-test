@@ -131,7 +131,7 @@ pipeline {
 
 ```
 
-#### Optional: Extract logic to Groovy Classes
+#### Recommended: Extract logic to Groovy Classes
 You can use Groovy classes to group shared logic to avoid duplication where needed.
 
 `src/com/example/Docker.groovy`:

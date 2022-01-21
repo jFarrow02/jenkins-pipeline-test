@@ -25,21 +25,19 @@
 ## Jenkinsfile syntax:
     
 `Jenkinsfile`:
-    ```
-        pipeline { // "pipeline" must be top level
-            agent any { // "agent" where to execute
-                stages { // where the "work" happens
-                    stage("build) { // stage name
-                        steps { // stage steps
-
-                        }
+    
+```
+    pipeline { // "pipeline" must be top level
+        agent any { // "agent" where to execute
+            stages { // where the "work" happens
+                stage("build) { // stage name
+                    steps { // stage steps
                     }
                 }
             }
         }
-
-        node {
-            // groovy script
-        }
-
-    ```
+    }
+    node {
+        // groovy script
+    }
+```

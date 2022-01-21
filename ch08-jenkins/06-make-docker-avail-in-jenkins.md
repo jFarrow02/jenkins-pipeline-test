@@ -38,13 +38,13 @@ The most common way to do this is to **mount a Docker volume from your server in
  
 1. Add repository credentials to Jenkins:
     - Jenkins > Credentials > System > Global credentials (unrestricted) > Add credentials
-2. Add binding for Dockerhub credentials to job:
+2. Add binding for private Docker repository credentials to job:
     - Build Environment > Bindings > Username & password (separated)
     - Attach binding name to selected credentials
 
 3. Update image name to push to repository:
     - Jenkins > {job name}
-    - 
+
     ```
     docker build -t {repo-name}/{application-name}:{tag}
     echo $PASSWORD | docker login -u ${username-var} --password-stdin // for security reasons, do not expose password 
