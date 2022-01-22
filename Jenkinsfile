@@ -20,7 +20,7 @@ pipeline {
             steps {
                 script {
                     echo "building the application..."
-                    'mvn package'
+                    sh 'mvn package'
                 }
             }
         }
