@@ -14,5 +14,21 @@ pipeline {
                 }
             }
         }
+
+        stage("build") {
+            steps {
+                script {
+                    echo "building the application..."
+                }
+            }
+        }
+
+        stage("deploy") {
+            steps {
+                script {
+                    echo "deploying the application..."
+                }
+            }
+        }
     }
 }
