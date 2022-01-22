@@ -1,3 +1,5 @@
+@Library('jenkins-shared-library')
+
 pipeline {
 
     agent any
@@ -7,20 +9,12 @@ pipeline {
     }
 
     stages {
-        stage("test") {
-            steps {
-                script {
-                    echo "testing the application..."
-                    sh "mvn test"
-                }
-            }
-        }
 
         stage("build") {
             steps {
                 script {
-                    echo "building the application..."
-                    sh "mvn package"
+                    echo "testing and packaging the application..."
+                    testAndPackage()
                 }
             }
         }
