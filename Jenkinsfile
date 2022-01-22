@@ -11,7 +11,7 @@ pipeline {
             steps {
                 script {
                     echo "testing the application..."
-                    sh 'mvn test'
+                    sh "mvn test"
                 }
             }
         }
@@ -20,7 +20,7 @@ pipeline {
             steps {
                 script {
                     echo "building the application..."
-                    sh 'mvn package'
+                    sh "mvn package"
                 }
             }
         }
