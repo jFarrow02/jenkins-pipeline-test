@@ -21,7 +21,7 @@ In Jenkins:
 ### Prepare Jenkinsfile and EC2 Instance
 
 - `docker login` on EC2 instance
-- Configure security rule to allow access to EC2 from Jenkins server's IP address
+- Configure security rule to allow SSH access to EC2 from Jenkins server's IP address
 
 
 `Jenkinsfile`:
@@ -44,3 +44,15 @@ pipeline {
 }
 
 ```
+- Run Jenkins build
+
+## Some Notes:
+
+1. Deploying app using SSH is applicable for **all servers or cloud providers**
+2. Simple use case:
+    - connect to server and start 1 Docker container
+    - good for smaller projects
+    - Deployment looks different for tens or 100s of containers
+    - Container orchestration tool like K8s is needed
+3. Using docker compose for deployment:
+    - from Git repo, copy docker-compose to EC2 after ssh-ing into it, and execute docker-compose command on EC2 from sshagent block
