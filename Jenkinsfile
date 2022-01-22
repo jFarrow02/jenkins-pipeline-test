@@ -8,20 +8,26 @@ pipeline {
 
     stages {
         stage("test") {
-            script {
-                echo "testing the application..."
+            stages {
+                script {
+                    echo "testing the application..."
+                }
             }
         }
 
         stage("build") {
             script {
-                echo "building the application..."
+                stages {
+                    echo "building the application..."
+                }
             }
         }
 
         stage("deploy") {
             script {
-                echo "deploying the application..."
+                stages {
+                    echo "deploying the application..."
+                }
             }
         }
     }
