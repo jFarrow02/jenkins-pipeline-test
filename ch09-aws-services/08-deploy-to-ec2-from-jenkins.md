@@ -34,7 +34,7 @@ pipeline {
         steps {
             script {
                 def dockerCmd = 'docker run -d -p {port}:{port} {image-name}:{tag-name}'
-                sshagent([ '{credential-name}']) {
+                sshagent([ '{ssh-username-with-private-key-credential-name}']) {
                     sh "ssh -o StrictHostKeyChecking=no {instance-username}@{instance-ip} ${dockerCmd}" //Suppress popup
 
                 }
