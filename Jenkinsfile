@@ -5,7 +5,7 @@ pipeline {
     agent any
 
     environment {
-        NEXUS_REPO = "35.153.127.31:8083"
+        NEXUS_REPO = "107.22.111.48:8083"
         TAG = "1.0"
         IMAGE = "${NEXUS_REPO}/java-maven-app:${TAG}"
     }
