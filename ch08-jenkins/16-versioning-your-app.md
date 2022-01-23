@@ -1,8 +1,11 @@
 ## Dynamically Increment Application Version in Jenkins Pipeline - Part I
 
 3 Parts of a Version:
- **3** . **2** . **1**
- Major  Minor   Patch
+
+|   **3**.  |   **2**.  |   **1**   |
+|-----------|-----------|-----------|
+|   Major   |   Minor   |   Patch   |
+ 
 
  1. **Major**: Contains big/breaking changes, NOT backwards-compatible
  2. **Minor**: New, but backwards-compatible changes

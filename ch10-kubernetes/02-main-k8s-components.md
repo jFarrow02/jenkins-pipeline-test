@@ -10,7 +10,7 @@ Each pod receives its own internal IP address. Pods are **ephemeral**. When a po
 
 ## Services and Ingress
 
-**Services** are static IP addresses that can be attached to each pod. Lifecycles of pod and service are NOT connected.
+**Services** are static IP addresses that can be attached to each pod. Lifecycles of pod and service are NOT connected. Also act as load balancers.
 
 External services are accessible from public internet. Internal services are not. **Ingress** forwards requests from public internet to external services.
 
@@ -28,4 +28,7 @@ K8s explicitly does NOT manage any data persistence.
 
 ## Deployment and Stateful Set
 
+**Deployments** are blueprints for pods. Allow you to create replicas of pods as necessary for maximum application availability. In practice you mainly work with deployments and not pods.
+
+**Stateful Sets** are for apps like DBs that have state. Like deployments, stateful sets replicate pods and scale them up or down. More difficult than working with deployments, so it's a common practice to host DBs **outside** of K8s clusters.
 
