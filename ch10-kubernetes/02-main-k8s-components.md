@@ -16,7 +16,7 @@ External services are accessible from public internet. Internal services are not
 
 ## Config Map and Secret
 
-**Config Map** contains configuration data of the application. In K8s yo connect the config map to the pod for easy configuration, esp. if any config data changes.
+**Config Map** contains configuration data of the application. In K8s you connect the config map to the pod for easy configuration, esp. if any config data changes.
 
 **Secret** is like Config Map, but is used to store secret data like credentials. It is base64 encoded; should also be **encrypted** using third-party tools to make them secure.
 
