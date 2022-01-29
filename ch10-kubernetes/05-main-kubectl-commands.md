@@ -11,7 +11,7 @@
     - See `kubectl create help` for list of available components
 
 3. **Create Pod**:
-    - Pods are the smallest unit in K8s, but you don't create pods directly. Instead, you create **deployments**; abstraction over pods.
+    - Pods are the smallest unit in K8s, but you don't create pods directly. Instead, you create **deployments**, abstraction over pods.
     - `kubectl create deployment {deployment-name} --image={image} [--dry-run] [options]`
     - **Replica Set** manages replicas of the pod. You will never work directly with the replica set.
 

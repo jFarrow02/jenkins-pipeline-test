@@ -151,7 +151,7 @@ spec:
 
 ## Step 6: Create Mongoexpress Deployment & Service
 
-**Optional**: Create `ConfigMap` with mongodb server connection string, in case multiple applications in the cluster will connect to mongo
+**Optional**: Create (shared) `ConfigMap` with mongodb server connection string, in case multiple applications in the cluster will connect to mongo
 
 `mongo-config-map.yaml`:
 
