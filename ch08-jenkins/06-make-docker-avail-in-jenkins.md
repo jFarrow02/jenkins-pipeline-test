@@ -24,7 +24,7 @@ The most common way to do this is to:
     - /var/run/docker.sock: Docker volume
     - $(which docker): Docker runtime binary
 4. Change permissions on /var/run/docker.sock to allow jenkins Linux user to read/write:
-    - `docker exec -u 0 -it ca97cc544c34 /bin/bash`
+    - `docker exec -u 0 -it {container_id} /bin/bash`
     - `chmod o=rw- /var/run/docker.sock`
 
 **You can now execute Docker from "Execute Shell" commands in any Jenkins build.**
