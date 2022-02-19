@@ -35,7 +35,7 @@ This command increments to the next patch version of the package:
 
  `Jenkinsfile`:
 
- ```
+ ```groovy
     
     pipeline {
 
@@ -51,7 +51,7 @@ This command increments to the next patch version of the package:
                 steps {
                     script {
                         echo "incrementing app version..."
-                         sh "mvn build-helper:parse-version versions:set \
+                         sh 'mvn build-helper:parse-version versions:set \
                          -DnewVersion=\\\${parsedVersion.majorVersion}.\\\${parsedVersion.minorVersion}.\\\${parsedVersion.nextIncrementalVersion} \
                          versions:commit'
                          
@@ -94,7 +94,7 @@ This command increments to the next patch version of the package:
 
  `Dockerfile`:
 
- ```
+ ```dockerfile
     FROM openjdk:8-jre-alpine
 
     EXPOSE 8080
@@ -114,7 +114,7 @@ Must commit the updated (pom.xml, etc.) from Jenkinsfile:
 
 `Jenkinsfile`:
 
- ```
+ ```groovy
     
     pipeline {
 
@@ -157,7 +157,7 @@ Must commit the updated (pom.xml, etc.) from Jenkinsfile:
                             // sh 'git config --list'
 
                             // commit changes from Jenkinsfile
-                            sh "git remote set-url origin https://${USER}:${PWD}@{git-repo-url}" // set repo url for current context and pass credentials for auth
+                            sh "git remote set-url origin https://$USER:$PWD@{git-repo-url}" // set repo url for current context and pass credentials for auth
                             sh 'git add .'
                             sh "git commit -m"ci: version bump"
                             // sh "git push origin HEAD:jenkins-jobs"

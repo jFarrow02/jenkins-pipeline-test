@@ -26,7 +26,7 @@ In Jenkins:
 
 `Jenkinsfile`:
 
-```
+```groovy
 pipeline {
     // ...
 

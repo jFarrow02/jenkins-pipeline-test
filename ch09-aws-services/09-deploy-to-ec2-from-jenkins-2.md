@@ -23,7 +23,7 @@ On same level as `Jenkinsfile`:
 
 `docker-compose.yaml`:
 
-```
+```yaml
 version: '3.8'
 
 services:
@@ -47,7 +47,7 @@ In order to execute `docker-compose.yaml` on the EC2 instance, we need the file 
 
 `Jenkinsfile`:
 
-```
+```groovy
 pipeline {
     // ...
 
@@ -83,7 +83,7 @@ echo "success"
 
 `Jenkinsfile`:
 
-```
+```groovy
 pipeline {
     // ...
 
@@ -112,7 +112,7 @@ pipeline {
 
 `docker-compose.yaml`:
 
-```
+```yaml
 version: '3.8'
 
 services:
@@ -131,7 +131,7 @@ services:
 
 `server-cmds.sh`:
 
-```
+```sh
 #!/usr/bin/env bash
 
 export IMAGE=$1
@@ -141,7 +141,7 @@ echo "success"
 
 `Jenkinsfile`:
 
-```
+```groovy
 pipeline {
     // ...
 
